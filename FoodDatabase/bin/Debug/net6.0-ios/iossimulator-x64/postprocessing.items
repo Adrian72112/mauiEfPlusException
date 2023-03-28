@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="FoodDatabase.app/FoodDatabase">
+      <BCSymbolMapName>FoodDatabase.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>true</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>FoodDatabase.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile>/Users/atesore/Desktop/FoodDatabaseMaui-main/FoodDatabase/obj/Debug/net6.0-ios/iossimulator-x64/mtouch-symbols.list</SymbolFile>
+      <DSymName>FoodDatabase.app.dSYM</DSymName>
+      <SourceProjectPath>/Users/atesore/Desktop/FoodDatabaseMaui-main/FoodDatabase</SourceProjectPath>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>

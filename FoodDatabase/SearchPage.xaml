@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodDatabase.SearchPage"
+             Title="Search Food Database">
+
+    <VerticalStackLayout>
+
+        <HorizontalStackLayout>
+            <Button IsEnabled="False" Text="Food Search" Margin="5,5,5,5"/>
+            <Button Command="{Binding PowerFoodsNavigation}" Margin="5,5,5,5" Text="Power Foods"></Button>
+        </HorizontalStackLayout>
+
+        <Label
+            Margin="5,5,5,5"
+            Text="{Binding DatabaseStats}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Margin="5,5,5,5" Command="{Binding ShowCategoryCommand}" Text="Change Category"/>
+
+            <Label Margin="5,5,5,5" 
+                   Text="{Binding Category.Description}" 
+                   VerticalOptions="CenterAndExpand"
+                   Grid.Column="1"/>
+
+            <ListView Grid.Row="1" 
+                                Margin="5,5,5,5"
+                                IsVisible="{Binding ShowCategory}"
+                            ItemsSource="{Binding FoodCategories}"
+                                SelectionMode="Single"
+                                SelectedItem="{Binding Category}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Description}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label 
+                Margin="5,5,5,5"                
+                Text="Enter Search:"
+                VerticalOptions="Center"
+                HorizontalOptions="End"/>
+            <Entry
+                Margin="5,5,5,5"
+                Grid.Row="0"
+                Grid.Column="1"
+                x:Name="SearchEntry"
+                Placeholder="Search text"
+                MaxLength="255"
+                ClearButtonVisibility="WhileEditing"
+                Keyboard="Text"
+                Text="{Binding SearchText}"/>
+        </Grid>
+        <Label Margin="5,5,5,5"
+               IsVisible="{Binding NoFoods}"
+               Text="No food items were found."/>
+        <ListView
+            ItemsSource="{Binding FoundationFoods}"
+            IsVisible="{Binding HasFoods}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell 
+                        Text="{Binding Description}"
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.FoodCommand}"
+                        CommandParameter="{Binding Id}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

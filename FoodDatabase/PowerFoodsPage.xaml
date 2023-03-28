@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodDatabase.PowerFoodsPage"
+             Title="Power Foods">
+    <VerticalStackLayout>
+        <HorizontalStackLayout>
+            <Button Command="{Binding SearchNavigation}" Text="Food Search" Margin="5,5,5,5"/>
+            <Button IsEnabled="False" Text="Power Foods" Margin="5,5,5,5"></Button>
+        </HorizontalStackLayout>
+
+        <Label 
+            Text="{Binding Title}"            
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            Margin="5,5,5,5"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label 
+                Margin="5,5,5,5"
+                Grid.Row="0"
+                Grid.Column="0"
+            Text="Search for nutrient:"
+            VerticalOptions="Center"
+            HorizontalOptions="End"/>
+            <Entry
+                Margin="5,5,5,5"
+                Grid.Row="0"
+                Grid.Column="1"
+                x:Name="SearchEntry"
+                Placeholder="Search text"
+                MaxLength="255"
+                ClearButtonVisibility="WhileEditing"
+                Keyboard="Text"
+                Text="{Binding NutrientSearch}"/>
+        </Grid>
+        <CollectionView 
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            ItemsSource="{Binding Nutrients}"
+            IsVisible="{Binding IsSelecting}"
+            SelectionMode="Single"
+            SelectedItem="{Binding SelectedNutrient}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="5,5,5,5   ">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Name}"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <CollectionView 
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            IsVisible="{Binding IsNotSelecting}"
+            ItemsSource="{Binding PowerFoods}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="5,5,5,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Button HorizontalOptions="Start"
+                                VerticalOptions="Center" Text="View"  
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.FoodCommand}"
+                                CommandParameter="{Binding Id}"/>
+                        <Label Text="{Binding Description}" Grid.Column="1" VerticalOptions="Center"/>
+                        <Label Text="{Binding Amount}" Grid.Column="2" VerticalOptions="Center"/>
+                        <Label Margin="5,0,0,0" Text="{Binding Unit}" Grid.Column="3" VerticalOptions="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

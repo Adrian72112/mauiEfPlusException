@@ -1,0 +1,12 @@
+/Users/atesore/Desktop/FoodDatabaseMaui-main/FoodDatabase/obj/Debug/net6.0-android/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+/Users/atesore/Desktop/FoodDatabaseMaui-main/FoodDatabase/obj/Debug/net6.0-android/build.props
+/Users/atesore/Desktop/FoodDatabaseMaui-main/FoodDatabase/obj/Debug/net6.0-android/adb.props
+/Users/atesore/Desktop/FoodDatabaseMaui-main/FoodDatabase/obj/Debug/net6.0-android/FoodDatabase.csproj.AssemblyReference.cache
+/Users/atesore/Desktop/FoodDatabaseMaui-main/FoodDatabase/obj/Debug/net6.0-android/mauiimage.inputs
+/Users/atesore/Desktop/FoodDatabaseMaui-main/FoodDatabase/obj/Debug/net6.0-android/mauifont.inputs
+/Users/atesore/Desktop/FoodDatabaseMaui-main/FoodDatabase/obj/Debug/net6.0-android/mauisplash.inputs
+/Users/atesore/Desktop/FoodDatabaseMaui-main/FoodDatabase/obj/Debug/net6.0-android/resizetizer/sp/maui_colors.xml
+/Users/atesore/Desktop/FoodDatabaseMaui-main/FoodDatabase/obj/Debug/net6.0-android/resizetizer/sp/maui_splash_image.xml
+/Users/atesore/Desktop/FoodDatabaseMaui-main/FoodDatabase/obj/Debug/net6.0-android/mauisplash.stamp
+/Users/atesore/Desktop/FoodDatabaseMaui-main/FoodDatabase/obj/Debug/net6.0-android/mauifont.stamp
+/Users/atesore/Desktop/FoodDatabaseMaui-main/FoodDatabase/obj/Debug/net6.0-android/mauiimage.stamp

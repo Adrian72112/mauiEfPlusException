@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="FoodDatabase.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:FoodDatabase"
+    Shell.FlyoutBehavior="Disabled">
+    <ShellContent
+        x:Name="MainContainer"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Title="Home"
+        Route="MainPage"/>
+    <ShellContent 
+        x:Name="SearchContainer"
+        ContentTemplate="{DataTemplate local:SearchPage}"        
+        Title="Food Search"
+        Route="Search"/>
+    <ShellContent 
+        x:Name="PowerFoodsContainer"
+        ContentTemplate="{DataTemplate local:PowerFoodsPage}"        
+        Title="Power Foods"
+        Route="PowerFoods"/>
+    <ShellContent 
+        x:Name="FoodsContainer"
+        ContentTemplate="{DataTemplate local:FoodPage}"        
+        Title="Food Nutrition Facts"
+        Route="Food"/>
+</Shell>
